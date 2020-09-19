@@ -20,33 +20,37 @@ const App = () => {
             return setVideos(data);
         });
     }, []);// se pasa siempre un segundo valor como un array vacio
+    console.log(videos)
 
-    console.log(videos);
-    
     return (
         <div className="App">
             <Header />
             <Search />
-
-            <Categories title="Mi lista">
-                <Carousel>
-                    <CarouselItem />
-                    <CarouselItem />
-                    <CarouselItem />
-                </Carousel>
-            </Categories>
-
+            {videos.mylist !== undefined && videos.mylist.length > 0 && (
+                <Categories title="Mi lista">
+                    <Carousel>
+                        <CarouselItem />
+                    </Carousel>
+                </Categories>
+            )}
+            
             <Categories title="Tendencias">
                 <Carousel>
-                    <CarouselItem />
-                    <CarouselItem />
+                    {videos.trends !== undefined &&
+                        videos.trends.map((item) => {
+                            return <CarouselItem key={item.id} {...item} />
+                        })
+                    }
                 </Carousel>
             </Categories>
 
             <Categories title="Originales de platzi video">
                 <Carousel>
-                    <CarouselItem />
-                    <CarouselItem />
+                    {videos.originals !== undefined &&
+                        videos.originals.map((item) => {
+                            return <CarouselItem key={item.key} {...item}/>
+                        })
+                    }
                 </Carousel>
             </Categories>
 
