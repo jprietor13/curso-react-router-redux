@@ -38,6 +38,17 @@ module.exports = {//se crea un nuevo modulo que se exportara con dicha configura
                     'sass-loader'
                 ],
             },
+            {//Regla para elementos multimedia
+                test: /\.(png|gif|jpg)$/, //añade al proyecto elemento png gif jpg
+                use: [
+                    {
+                        'loader': 'file-loader', //paquete que se instalo con npm
+                        options: {//se asignara un hash para el nombre del archivo
+                            name: 'assets/[hash].[ext]'
+                        }
+                    }
+                ]
+            }
         ],
     },
     plugins: [ //plugins necesarios
