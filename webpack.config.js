@@ -51,6 +51,9 @@ module.exports = {//se crea un nuevo modulo que se exportara con dicha configura
             }
         ],
     },
+    devServer: {
+        historyApiFallback: true,
+    },
     plugins: [ //plugins necesarios
         new HtmlWebpackPlugin({//nueva referencia a HtmlWebPackPlugin
             template: './public/index.html',
