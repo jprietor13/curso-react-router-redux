@@ -1,7 +1,7 @@
 import React from 'react';
 import googleIcon from '../assets/images/google-icon.png';
 import twitterIcon from '../assets/images/twitter-icon.png';
-import '../assets/styles/components/Login.scss';
+import '../assets/styles/containers/Login.scss';
 
 const Login = () => {
     return(
