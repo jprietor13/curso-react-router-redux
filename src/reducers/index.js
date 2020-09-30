@@ -1,6 +1,12 @@
 const reducer = (state, action) => {
     switch(action.type){
         case 'SET_FAVORITE'://manejamos el set favorite
+            const exists = state.myList.find((item) => {
+                return item.id === action.payload.id;
+            })
+            if(exists){
+                return{...state}
+            }
             return {
                 ...state,//se trae el state destructurado
                 //elemento a actulizar
