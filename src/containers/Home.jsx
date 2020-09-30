@@ -16,7 +16,6 @@ const Home = () => {
     const inicialState = useInitialState(API);
     return (
         <div className="App">
-            <Header />
             <Search />
             {inicialState.mylist !== undefined && inicialState.mylist.length > 0 && (
                 <Categories title="Mi lista">
@@ -48,8 +47,6 @@ const Home = () => {
                     }
                 </Carousel>
             </Categories>
-
-            <Footer />
         </div>
     )
 };
