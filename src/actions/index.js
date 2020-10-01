@@ -12,3 +12,9 @@ export const deleteFavorite = payload => ({
     type: 'DELETE_FAVORITE',
     payload,
 });
+
+//manejo de info del login
+export const loginRequest = payload => ({
+    type: 'LOGIN_REQUEST',
+    payload,
+});
