@@ -22,6 +22,11 @@ const reducer = (state, action) => {
                 ...state,
                 user: action.payload,
             }
+        case 'LOGOUT_REQUEST':
+            return {
+                ...state,
+                user: action.payload,
+            }    
         default: //si no coindice con ninguno de los casod, mandar el estado siempre como se encontro
             return state;
     }
