@@ -13,7 +13,7 @@ const Header = (props) => {
     const hasUser = Object.keys(user).length > 0;
 
     const handleLogout = () => {
-        props.logoutRequest({});
+        props.logoutRequest({}); //enviamos el objeto vacio para reiniciar el estado
     }
 
     return(
