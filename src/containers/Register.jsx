@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from '../components/Header'
 import { connect } from 'react-redux';
 import { registerRequest } from '../actions';
 import { Link } from 'react-router-dom';
@@ -27,20 +28,23 @@ const Register = (props) => {
     }
 
     return(
-        <section className="register">
-            <section className="register__container">
-                <h2>Regístrate</h2>
-                <form className="register__container--form" onSubmit={handleSubmit}>
-                    <input className="input" name="name" onChange={handleInput} type="text" placeholder="Nombre" />
-                    <input className="input" name="email" onChange={handleInput} type="text" placeholder="Correo" />
-                    <input className="input" name="pass" onChange={handleInput} type="password" placeholder="Contraseña" />
-                    <button className="button">Registrarme</button>
-                </form>
-                <Link to="/login">
-                    Iniciar sesión
-                </Link>
+        <React.Fragment>
+            <Header isRegister/> 
+            <section className="register">
+                <section className="register__container">
+                    <h2>Regístrate</h2>
+                    <form className="register__container--form" onSubmit={handleSubmit}>
+                        <input className="input" name="name" onChange={handleInput} type="text" placeholder="Nombre" />
+                        <input className="input" name="email" onChange={handleInput} type="text" placeholder="Correo" />
+                        <input className="input" name="pass" onChange={handleInput} type="password" placeholder="Contraseña" />
+                        <button className="button">Registrarme</button>
+                    </form>
+                    <Link to="/login">
+                        Iniciar sesión
+                    </Link>
+                </section>
             </section>
-        </section>
+        </React.Fragment>
     );
 }
 
