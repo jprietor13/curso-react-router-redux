@@ -9,6 +9,7 @@ module.exports = {//se crea un nuevo modulo que se exportara con dicha configura
                                             //donde nos encontramos y le pasamos el directorio (dist)
                                             //en donde guardaremos los archivos.
         filename: 'bundle.js',//nombre del archivo principal
+        publicPath: '/',//de ahi partira la busqueda de elementos en el bundle
     },
     resolve: {//resolver extensiones que utilizaremos para el proyecto
         extensions: ['.js', '.jsx'],

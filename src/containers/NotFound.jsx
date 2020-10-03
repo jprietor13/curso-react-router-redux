@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/styles/containers/NotFound.scss'
 
-const NotFound = () => {
+const NotFound = (props) => {
     return(
         <React.Fragment>
             <section className="error-container">
@@ -13,7 +13,7 @@ const NotFound = () => {
             </section>
             <h1 className="message-not-found">Ups!! el sitio requerido no se encuentra</h1>
             <div className="link-container">
-                <a target="_blank" href="" className="more-link">Regresar</a>
+                <a href="/" className="more-link" onClick={() => props.history.goBack()}>Regresar</a>
             </div>
         </React.Fragment>    
     );
